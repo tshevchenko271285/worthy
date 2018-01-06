@@ -114,10 +114,20 @@ function worthy_widgets_init() {
 add_action( 'widgets_init', 'worthy_widgets_init' );
 
 /**
- * Require Enqueue scripts and styles.
+ * Enqueue scripts and styles.
  */
-require get_template_directory() . '/inc/custom-style.php';
-require get_template_directory() . '/inc/custom-scripts.php';
+function worthy_scripts() {
+	wp_enqueue_style( 'worthy-style', get_stylesheet_uri() );
+
+	wp_enqueue_script( 'worthy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'worthy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'worthy_scripts' );
 
 /**
  * Implement the Custom Header feature.
