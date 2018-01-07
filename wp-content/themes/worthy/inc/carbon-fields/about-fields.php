@@ -5,6 +5,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_about_block' );
 function crb_about_block() {
 	Container::make( 'theme_options', 'About' )
+		->set_icon('dashicons-lightbulb')
 		->add_tab( 'First Block', array(
 			Field::make( 'text', 'crb_about_block_title', 'Title' ),
 			Field::make( 'text', 'crb_about_block_desc', 'Desctiption' ),

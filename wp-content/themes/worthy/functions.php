@@ -159,7 +159,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Require Custom Fields from Banner Block.
  */
 require get_template_directory() . '/inc/carbon-fields/banner-fields.php';
+
 /**
  * Require Custom Fields from About Block.
  */
 require get_template_directory() . '/inc/carbon-fields/about-fields.php';
+/**
+ * Require Custom Fields from Services Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/services-fields.php';
