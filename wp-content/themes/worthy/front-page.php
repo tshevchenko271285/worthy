@@ -19,6 +19,7 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', 'banner' );
 		get_template_part( 'template-parts/content', 'about' );
 		get_template_part( 'template-parts/content', 'services' );
+		get_template_part( 'template-parts/content', 'portfolio' );
 
 	endwhile; // End of the loop.
 	?>
