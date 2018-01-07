@@ -164,8 +164,14 @@ require get_template_directory() . '/inc/carbon-fields/banner-fields.php';
  * Require Custom Fields from About Block.
  */
 require get_template_directory() . '/inc/carbon-fields/about-fields.php';
+
 /**
  * Require Custom Fields from Services Block.
  */
 require get_template_directory() . '/inc/carbon-fields/services-fields.php';
+
+/**
+ * Require Custom Fields from Services Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/portfolio-fields.php';
 

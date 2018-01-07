@@ -20,7 +20,7 @@ $services['right_list'] = is_array(carbon_get_theme_option('crb_services_block_r
 				<div class="space"></div>
 				<div class="row">
 					<div class="col-sm-6">
-						<?php if($services['left_list']) : 
+						<?php if(shuffle($services['left_list']) ) : 
 							foreach( $services['left_list'] as $left_key=>$left_item ) { 
 								if($left_key > 3) break;
 								?>
@@ -40,7 +40,7 @@ $services['right_list'] = is_array(carbon_get_theme_option('crb_services_block_r
 					</div>
 					<div class="space visible-xs"></div>
 					<div class="col-sm-6">
-						<?php if($services['right_list']) : 
+						<?php if(shuffle($services['right_list']) )  : 
 							foreach( $services['right_list'] as $right_key=>$right_item ) { 
 								if($right_key > 3) break;
 							?>

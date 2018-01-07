@@ -1,10 +1,15 @@
+<?php
+$portfolio['title'] = carbon_get_theme_option( 'crb_portfolio_block_title' ) ? carbon_get_theme_option( 'crb_portfolio_block_title' ) : '';	
+$portfolio['description'] = carbon_get_theme_option( 'crb_portfolio_block_desc' ) ? carbon_get_theme_option( 'crb_portfolio_block_desc' ) : '';	
+
+?>		
 		<!-- section start -->
 		<!-- ================ -->
 		<div class="section">
 			<div class="container">
-				<h1 class="text-center title" id="portfolio">Portfolio</h1>
+				<h1 class="text-center title" id="portfolio"><?php echo $portfolio['title']; ?></h1>
 				<div class="separator"></div>
-				<p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
+				<p class="lead text-center"><?php echo $portfolio['description']; ?></p>
 				<br>			
 				<div class="row object-non-visible" data-animation-effect="fadeIn">
 					<div class="col-md-12">
@@ -33,12 +38,12 @@
 							$attr_portfolio = array('post_type'=>'portfolio', 'posts_per_page' => 12,);
 							$query_portfolio = new WP_Query($attr_portfolio); 
 							if( $query_portfolio->have_posts() ){
-								$porfolio_index = 1;
+								$porfolio_index = 0;
 								while( $query_portfolio->have_posts() ){ $query_portfolio->the_post();
+									$porfolio_index++;
 									$terms_portfolio = get_the_terms(get_the_id(), 'type_of_work');
 								?>
 								<!-- portfolio items start -->
-								
 									<div class="col-sm-6 col-md-3 isotope-item <?php echo $terms_portfolio[0]->slug; ?>">
 										<div class="image-box">
 											<div class="overlay-container">
@@ -79,7 +84,7 @@
 										<!-- Modal end -->
 									</div>
 								<?php
-								$porfolio_index++;
+								
 								}
 								wp_reset_postdata(); // сбрасываем переменную $post
 							} 
