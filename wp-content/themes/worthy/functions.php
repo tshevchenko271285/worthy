@@ -7,6 +7,15 @@
  * @package worthy
  */
 
+/**
+ * Initial Carbon Fields 
+ */
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+	require_once( 'vendor/autoload.php' );
+	\Carbon_Fields\Carbon_Fields::boot();
+}
+
 if ( ! function_exists( 'worthy_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -146,3 +155,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Require Custom Fields from Banner Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/banner-fields.php';
+/**
+ * Require Custom Fields from About Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/about-fields.php';

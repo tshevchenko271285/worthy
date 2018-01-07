@@ -10,7 +10,9 @@
 (function($){
 	$(document).ready(function(){
 	
-		$(".banner-image").backstretch('images/banner.jpg');
+		// _banner_block_bg variable write in file >>> template-parts\content-banner.php
+		//$(".banner-image").backstretch('images/banner.jpg');
+		$(".banner-image").backstretch(_banner_block_bg);
 		
 		// Fixed header
 		//-----------------------------------------------
