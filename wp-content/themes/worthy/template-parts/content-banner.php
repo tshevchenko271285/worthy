@@ -1,4 +1,7 @@
 <?php
+/**
+ ** 	Prepare data from about block
+ */
 	$_banner_block_title = carbon_get_the_post_meta( 'crb_banner_block_title' ) ? carbon_get_the_post_meta( 'crb_banner_block_title' ) : '';
 
 	$_banner_block_text = carbon_get_the_post_meta( 'crb_banner_block_text' ) ? carbon_get_the_post_meta( 'crb_banner_block_text' ) : '';	

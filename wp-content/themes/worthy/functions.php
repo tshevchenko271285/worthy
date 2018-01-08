@@ -171,7 +171,17 @@ require get_template_directory() . '/inc/carbon-fields/about-fields.php';
 require get_template_directory() . '/inc/carbon-fields/services-fields.php';
 
 /**
- * Require Custom Fields from Services Block.
+ * Require Custom Fields from Portfolio Block.
  */
 require get_template_directory() . '/inc/carbon-fields/portfolio-fields.php';
+
+/**
+ * Require Custom Fields from Clients Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/clients-fields.php';
+
+/**
+ * Require Custom Fields from Clients Block.
+ */
+require get_template_directory() . '/inc/carbon-fields/footer-fields.php';
 
