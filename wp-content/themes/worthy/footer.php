@@ -89,24 +89,7 @@ $footer['link_text'] = carbon_get_theme_option('cbr_subfooter_link_text') ? carb
 				</div>
 				<div class="col-sm-6">
 					<div class="footer-content">
-						<form role="form" id="footer-form">
-							<div class="form-group has-feedback">
-								<label class="sr-only" for="name2">Name</label>
-								<input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
-								<i class="fa fa-user form-control-feedback"></i>
-							</div>
-							<div class="form-group has-feedback">
-								<label class="sr-only" for="email2">Email address</label>
-								<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
-								<i class="fa fa-envelope form-control-feedback"></i>
-							</div>
-							<div class="form-group has-feedback">
-								<label class="sr-only" for="message2">Message</label>
-								<textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
-								<i class="fa fa-pencil form-control-feedback"></i>
-							</div>
-							<input type="submit" value="Send" class="btn btn-default">
-						</form>
+						<?php echo do_shortcode('[contact-form-7 id="96" title="Contact form 1" html_id="footer-form" html_role="form"]'); ?>
 					</div>
 				</div>
 			</div>
