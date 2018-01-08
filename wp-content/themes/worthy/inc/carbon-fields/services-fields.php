@@ -4,8 +4,8 @@ use Carbon_Fields\Field;
 
 add_action( 'carbon_fields_register_fields', 'crb_services_block' );
 function crb_services_block() {
-	Container::make( 'theme_options', 'Services' )
-		->set_icon('dashicons-hammer')
+	Container::make( 'post_meta', 'Services' )
+		->show_on_post_type('page')
 		->add_tab( 'Basic Settings', array(
 					Field::make( 'text', 'crb_services_block_title', 'Title' )->set_width(37),
 					Field::make( 'text', 'crb_services_block_slug', 'Slug' )->set_width(37),

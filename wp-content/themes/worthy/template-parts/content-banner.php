@@ -1,14 +1,17 @@
 <?php
-	$_banner_block_title = carbon_get_theme_option( 'crb_banner_block_title' ) ? carbon_get_theme_option( 'crb_banner_block_title' ) : '';
+	$_banner_block_title = carbon_get_the_post_meta( 'crb_banner_block_title' ) ? carbon_get_the_post_meta( 'crb_banner_block_title' ) : '';
 
-	$_banner_block_text = carbon_get_theme_option( 'crb_banner_block_text' ) ? carbon_get_theme_option( 'crb_banner_block_text' ) : '';	
+	$_banner_block_text = carbon_get_the_post_meta( 'crb_banner_block_text' ) ? carbon_get_the_post_meta( 'crb_banner_block_text' ) : '';	
 
-	$_banner_block_bg = carbon_get_theme_option( 'crb_banner_block_bg' ) ? carbon_get_theme_option( 'crb_banner_block_bg' ) : '';
+	$_banner_block_bg = carbon_get_the_post_meta( 'crb_banner_block_bg' ) ? carbon_get_the_post_meta( 'crb_banner_block_bg' ) : '';
 
 	$_banner_block_bg_url = wp_get_attachment_url( $_banner_block_bg ) ? wp_get_attachment_url( $_banner_block_bg ) : ' ';
 
 	echo "<script>var _banner_block_bg = '$_banner_block_bg_url'</script>";
 ?>
+<!-- 	<pre>
+<?php //var_dump($about); //wp_die()?>
+</pre> -->
 <div id="banner" class="banner">
 	<div class="banner-image">
 		

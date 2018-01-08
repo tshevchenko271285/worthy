@@ -2,19 +2,19 @@
 /**
  ** 	Prepare data from about block
  */
-$about['title'] = carbon_get_theme_option( 'crb_about_block_title' ) ? carbon_get_theme_option( 'crb_about_block_title' ) : '';		
-$about['description'] = carbon_get_theme_option( 'crb_about_block_desc' ) ? carbon_get_theme_option( 'crb_about_block_desc' ) : '';		
-$about['image'] = carbon_get_theme_option( 'crb_about_block_img' ) ? wp_get_attachment_url(carbon_get_theme_option( 'crb_about_block_img' )) : false;		
-$about['text'] = carbon_get_theme_option( 'crb_about_block_text' ) ? carbon_get_theme_option( 'crb_about_block_text' ) : '';		
-$about['list'] = is_array(carbon_get_theme_option('crb_about_block_list')) ? carbon_get_theme_option('crb_about_block_list') : false;		
+$about['title'] = carbon_get_the_post_meta( 'crb_about_block_title' ) ? carbon_get_the_post_meta( 'crb_about_block_title' ) : '';		
+$about['description'] = carbon_get_the_post_meta( 'crb_about_block_desc' ) ? carbon_get_the_post_meta( 'crb_about_block_desc' ) : '';		
+$about['image'] = carbon_get_the_post_meta( 'crb_about_block_img' ) ? wp_get_attachment_url(carbon_get_the_post_meta( 'crb_about_block_img' )) : false;		
+$about['text'] = carbon_get_the_post_meta( 'crb_about_block_text' ) ? carbon_get_the_post_meta( 'crb_about_block_text' ) : '';		
+$about['list'] = is_array(carbon_get_the_post_meta('crb_about_block_list')) ? carbon_get_the_post_meta('crb_about_block_list') : false;		
 
-$about['sub_title'] = carbon_get_theme_option( 'crb_about_block_sub_title' ) ? carbon_get_theme_option( 'crb_about_block_sub_title' ) : '';
-$about['sub_text'] = carbon_get_theme_option( 'crb_about_block_sub_text' ) ? carbon_get_theme_option( 'crb_about_block_sub_text' ) : '';
-$about['accordion'] = is_array(carbon_get_theme_option('crb_about_block_accord')) ? carbon_get_theme_option('crb_about_block_accord') : false;
+$about['sub_title'] = carbon_get_the_post_meta( 'crb_about_block_sub_title' ) ? carbon_get_the_post_meta( 'crb_about_block_sub_title' ) : '';
+$about['sub_text'] = carbon_get_the_post_meta( 'crb_about_block_sub_text' ) ? carbon_get_the_post_meta( 'crb_about_block_sub_text' ) : '';
+$about['accordion'] = is_array(carbon_get_the_post_meta('crb_about_block_accord')) ? carbon_get_the_post_meta('crb_about_block_accord') : false;
 ?>
 
 <!-- <pre>
-<?php //var_dump($about); //wp_die()?>
+<?php// var_dump($about); //wp_die()?>
 </pre> -->
 		<!-- section start -->
 		<!-- ================ -->
@@ -53,6 +53,7 @@ $about['accordion'] = is_array(carbon_get_theme_option('crb_about_block_accord')
 								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 									<?php 
 									$first_acc = true;
+									if($about['accordion']) :
 									foreach($about['accordion'] as $acc_key=>$acc_item) { ?>
 									<div class="panel panel-default">
 										<div class="panel-heading" role="tab" id="heading<?php echo $acc_key; ?>">
@@ -82,7 +83,8 @@ $about['accordion'] = is_array(carbon_get_theme_option('crb_about_block_accord')
 									<?php 
 									$first_acc = false; 
 									} 
-									?>
+								endif;
+								?>
 								</div>
 							</div>
 						</div>

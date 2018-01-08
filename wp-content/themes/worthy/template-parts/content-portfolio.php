@@ -1,6 +1,6 @@
 <?php
-$portfolio['title'] = carbon_get_theme_option( 'crb_portfolio_block_title' ) ? carbon_get_theme_option( 'crb_portfolio_block_title' ) : '';	
-$portfolio['description'] = carbon_get_theme_option( 'crb_portfolio_block_desc' ) ? carbon_get_theme_option( 'crb_portfolio_block_desc' ) : '';	
+$portfolio['title'] = carbon_get_the_post_meta( 'crb_portfolio_block_title' ) ? carbon_get_the_post_meta( 'crb_portfolio_block_title' ) : '';	
+$portfolio['description'] = carbon_get_the_post_meta( 'crb_portfolio_block_desc' ) ? carbon_get_the_post_meta( 'crb_portfolio_block_desc' ) : '';	
 
 ?>		
 		<!-- section start -->

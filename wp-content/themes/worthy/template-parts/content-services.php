@@ -2,12 +2,12 @@
 /**
  ** 	Prepare data from services block
  */
-$services['title'] = carbon_get_theme_option( 'crb_services_block_title' ) ? carbon_get_theme_option( 'crb_services_block_title' ) : '';		
-$services['slug'] = carbon_get_theme_option( 'crb_services_block_slug' ) ? carbon_get_theme_option( 'crb_services_block_slug' ) : '';	
-$services['image'] = carbon_get_theme_option( 'crb_services_block_bg' ) ? wp_get_attachment_url(carbon_get_theme_option( 'crb_services_block_bg' )) : false;	
+$services['title'] = carbon_get_the_post_meta( 'crb_services_block_title' ) ? carbon_get_the_post_meta( 'crb_services_block_title' ) : '';		
+$services['slug'] = carbon_get_the_post_meta( 'crb_services_block_slug' ) ? carbon_get_the_post_meta( 'crb_services_block_slug' ) : '';	
+$services['image'] = carbon_get_the_post_meta( 'crb_services_block_bg' ) ? wp_get_attachment_url(carbon_get_the_post_meta( 'crb_services_block_bg' )) : false;	
 
-$services['left_list'] = is_array(carbon_get_theme_option('crb_services_block_left')) ? carbon_get_theme_option('crb_services_block_left') : false;		
-$services['right_list'] = is_array(carbon_get_theme_option('crb_services_block_right')) ? carbon_get_theme_option('crb_services_block_right') : false;	
+$services['left_list'] = is_array(carbon_get_the_post_meta('crb_services_block_left')) ? carbon_get_the_post_meta('crb_services_block_left') : false;		
+$services['right_list'] = is_array(carbon_get_the_post_meta('crb_services_block_right')) ? carbon_get_the_post_meta('crb_services_block_right') : false;	
 ?>
 		<!-- section start -->
 		<!-- ================ -->
@@ -20,11 +20,11 @@ $services['right_list'] = is_array(carbon_get_theme_option('crb_services_block_r
 				<div class="space"></div>
 				<div class="row">
 					<div class="col-sm-6">
-						<?php if(shuffle($services['left_list']) ) : 
+						<?php if($services['left_list'] ) : 
+							//shuffle($services['left_list']);
 							foreach( $services['left_list'] as $left_key=>$left_item ) { 
 								if($left_key > 3) break;
 								?>
-
 								<div class="media">
 									<div class="media-body text-right">
 										<h4 class="media-heading"><?php echo $left_item['title'] ?></h4>
@@ -40,7 +40,8 @@ $services['right_list'] = is_array(carbon_get_theme_option('crb_services_block_r
 					</div>
 					<div class="space visible-xs"></div>
 					<div class="col-sm-6">
-						<?php if(shuffle($services['right_list']) )  : 
+						<?php if($services['right_list'] )  : 
+						 //shuffle($services['right_list']);
 							foreach( $services['right_list'] as $right_key=>$right_item ) { 
 								if($right_key > 3) break;
 							?>
