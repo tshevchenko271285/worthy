@@ -1,6 +1,7 @@
 <?php
 $portfolio['title'] = carbon_get_the_post_meta( 'crb_portfolio_block_title' ) ? carbon_get_the_post_meta( 'crb_portfolio_block_title' ) : '';	
 $portfolio['description'] = carbon_get_the_post_meta( 'crb_portfolio_block_desc' ) ? carbon_get_the_post_meta( 'crb_portfolio_block_desc' ) : '';	
+$portfolio['count'] = carbon_get_the_post_meta( 'crb_portfolio_block_count' ) ? carbon_get_the_post_meta( 'crb_portfolio_block_count' ) : 12;	
 
 ?>		
 		<!-- section start -->
@@ -35,7 +36,7 @@ $portfolio['description'] = carbon_get_the_post_meta( 'crb_portfolio_block_desc'
 						<div class="isotope-container row grid-space-20">
 						<!-- isotope filters end -->
 							<?php
-							$attr_portfolio = array('post_type'=>'portfolio', 'posts_per_page' => 12,);
+							$attr_portfolio = array('post_type'=>'portfolio', 'posts_per_page' => $portfolio['count'],);
 							$query_portfolio = new WP_Query($attr_portfolio); 
 							if( $query_portfolio->have_posts() ){
 								$porfolio_index = 0;
