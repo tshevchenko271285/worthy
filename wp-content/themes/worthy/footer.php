@@ -10,7 +10,7 @@
  */
 
 /**
- ** 	Prepare data from Clients block
+ ** 	Prepare data from Footer block
  */
 // Contact info
 $footer['title'] = carbon_get_theme_option('cbr_footer_contact_title') ? carbon_get_theme_option('cbr_footer_contact_title') : '';
@@ -34,15 +34,10 @@ $footer['pinterest'] = carbon_get_theme_option('cbr_footer_pinterest') ? carbon_
 $footer['copytext'] = carbon_get_theme_option('cbr_subfooter_copytext') ? carbon_get_theme_option('cbr_subfooter_copytext') : '';
 $footer['link_url'] = carbon_get_theme_option('cbr_subfooter_link_url') ? carbon_get_theme_option('cbr_subfooter_link_url') : '';
 $footer['link_text'] = carbon_get_theme_option('cbr_subfooter_link_text') ? carbon_get_theme_option('cbr_subfooter_link_text') : '';
-
-
-
-//<?php echo $footer['']; ?>
 ?>
 <!-- footer start -->
 <!-- ================ -->
 <footer id="footer">
-
 	<!-- .footer start -->
 	<!-- ================ -->
 	<div class="footer section">
@@ -113,6 +108,5 @@ $footer['link_text'] = carbon_get_theme_option('cbr_subfooter_link_text') ? carb
 </footer>
 <!-- footer end -->
 <?php wp_footer(); ?>
-
 </body>
 </html>
